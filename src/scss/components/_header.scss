@@ -1,0 +1,15 @@
+.header{
+    background-color: $color-header-background;
+    color: $color-white;
+    padding: 0 $padding-default;
+
+    &__title{
+        letter-spacing: 1px;
+        font-family: "Lato", sans-serif;
+        margin: 0 $margin-item;
+    }
+
+    &__subtitle{
+        color: $color-dark-2;
+    }
+}

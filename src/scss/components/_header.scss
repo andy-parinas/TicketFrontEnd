@@ -3,6 +3,9 @@
     color: $color-white;
     padding: 0 $padding-default;
 
+    display: flex;
+    align-items: center;
+
     &__title{
         letter-spacing: 1px;
         font-family: "Lato", sans-serif;
@@ -11,5 +14,10 @@
 
     &__subtitle{
         color: $color-dark-2;
+    }
+
+    &__icon {
+        fill: $color-white;
+
     }
 }

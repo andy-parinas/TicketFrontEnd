@@ -1,0 +1,10 @@
+.badge{
+
+  padding: 0.5px $padding-item;
+  border-radius: 1rem;
+
+  &--default{
+    background-color: $color-badge-background;
+    color: $color-badge-font;
+  }
+}

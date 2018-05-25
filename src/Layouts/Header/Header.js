@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import CogIcon from "../../Components/Icons/CogIcon";
 
 class Header extends Component {
     render() {
         return (
             <div className="header">
+                <CogIcon className="header__icon"/>
                 <h1 className="header__title">
                     {this.props.title}
                     <small className="header__subtitle">{this.props.subtitle}</small>

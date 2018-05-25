@@ -2,6 +2,7 @@ $color-white: #ffffff;
 $color-light-1: #ecf0f1;
 $color-light-2: #ffbbbc;
 $color-light-3: #cccccc;
+$color-light-4: rgb(244, 244, 244);
 
 $color-dark-1: #333333;
 $color-dark-2: #777;
@@ -15,7 +16,6 @@ $color-orange-2: #c0392b;
 
 $color-navbar-background: $color-orange-1;
 $color-navbar-border: $color-orange-2;
-
 $color-navbar-font-default: $color-light-1;
 $color-navbar-font-hover: $color-light-2;
 
@@ -25,8 +25,25 @@ $color-breadcrumbs-background: $color-light-3;
 $color-breadcrumbs-font: $color-dark-1;
 
 $color-card-background: $color-white;
-$color-card-header: $color-orange-1;
+$color-card-header-primary: $color-orange-1;
+$color-card-header-secondary: $color-light-4;
+$color-card-header-border-secondary: $color-light-3;
 $color-card-border: $color-light-3;
+
+$color-tsimple-header: $color-light-4;
+
+$color-listitem-hover: $color-light-1;
+$color-item-font: $color-dark-2;
+$color-icon-fill: $color-dark-2;
+
+$color-badge-background: $color-dark-2;
+$color-badge-font: $color-white;
+
+$color-widget-background:$color-light-4;
+$color-widget-border: $color-light-3;
+
+$padding-widget: 2rem 2rem;
+
 
 $margin-card: 3rem 1rem;
 

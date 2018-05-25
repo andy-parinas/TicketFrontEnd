@@ -1,0 +1,37 @@
+.table-container{
+
+  margin: 2rem 1rem;
+
+}
+.tsimple{
+
+  table-layout:fixed;
+  width: 100%;
+  border-collapse: collapse;
+
+
+  &__head{
+
+    &__row{
+
+    }
+
+    &__header{
+      padding: 5px 1rem;
+      text-align: left;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+      font-family: "Lato", sans-serif;
+      background-color: $color-tsimple-header;
+    }
+
+  }
+
+  &__data {
+    padding: 5px 1rem;
+    font-size: 1.1rem;
+    font-family: "Lato", sans-serif;
+
+  }
+
+}

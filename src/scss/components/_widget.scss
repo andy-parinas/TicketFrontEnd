@@ -1,0 +1,43 @@
+.widget-group{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+
+.widget {
+
+  margin: $margin-item;
+  padding: $padding-widget;
+  border: 0.5px solid $color-widget-border;
+  border-radius: 5px;
+
+  &--default{
+    background: $color-widget-background;
+  }
+
+  &__header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon {
+    height: 3rem;
+    width: 3rem;
+    margin: $margin-item;
+  }
+
+  &__text {
+    font-size: 3rem;
+    margin: $margin-item;
+  }
+
+  &__subtext{
+    font-size: 1.2rem;
+  }
+
+}

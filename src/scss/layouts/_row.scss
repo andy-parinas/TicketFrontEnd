@@ -1,11 +1,12 @@
 .row {
+    margin: 0 $margin-default;
     display: flex;
 }
 
 .col-2{
-    width: 30%;
+    width: 20%;
 }
 
 .col-6{
-    width: 60%;
+    width: 70%;
 }

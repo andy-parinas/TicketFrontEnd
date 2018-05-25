@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
 
 import TitledCard from '../../Components/TitledCard/TitledCard';
+import DashboardWidget from "./DashboardWidget";
+import DashboardTable from "./DashboardTable";
 
 class DashboardPage extends Component {
     render() {
         return (
             <div className="page" >
-                <div className="row">
-                    <div className="col-2">
-                        <TitledCard title="Dashboard" >
-                            <h1> Sample Card </h1>
-                        </TitledCard>
-                    </div>
-                    <div className="col-6">
-                        <TitledCard title="Dashboard" >
-                            <h1> Sample Card </h1>
-                        </TitledCard>
-                    </div>
-                </div>
+                <DashboardWidget/>
+                <TitledCard color="secondary" title="Latest Open Tickets" >
+                    <DashboardTable/>
+                </TitledCard>
             </div>
         );
     }

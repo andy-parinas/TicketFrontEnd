@@ -1,0 +1,40 @@
+.list-group{
+
+  &__nav-item{
+    display: block;
+    padding: 1rem $padding-item;
+
+    font-size: 1.2rem;
+
+    &:not(:last-child){
+      border-bottom: 0.5px solid $color-card-border;
+    }
+
+    &:link,
+    &:visited{
+      text-decoration: none;
+    }
+
+    &:hover{
+      background-color: $color-listitem-hover;
+    }
+
+  }
+}
+
+.item-group{
+  display: flex;
+  align-items: center;
+  color: $color-item-font;
+
+  &__text{
+    margin-left: $margin-item;
+    font-size: 1.3rem;
+  }
+}
+
+.list-icon{
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: $color-icon-fill;
+}

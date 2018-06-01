@@ -1,0 +1,17 @@
+.container {
+
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  //grid-gap: 30px;
+
+}
+
+.side-board{
+  //margin: 0 $margin-default;
+  margin-left: $margin-default;
+}
+
+.content-page{
+  //margin: 0 $margin-default;
+  margin-right: $margin-default;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import TitledCard from '../../Components/TitledCard/TitledCard';
+import TitledCard from '../../UI/TitledCard/TitledCard';
 import DashboardWidget from "./DashboardWidget";
 import DashboardTable from "./DashboardTable";
 

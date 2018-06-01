@@ -2,6 +2,10 @@
 @import './abstract/typography';
 @import './abstract/base';
 
+
+@import './layouts/row';
+@import "layouts/container";
+
 @import './components/navbar';
 @import './components/header';
 @import './components/page';
@@ -10,5 +14,11 @@
 @import "components/badge";
 @import "components/widget";
 @import "components/table";
+@import "components/paginate";
+@import "components/login";
+@import "components/button";
+@import "components/input";
+@import "components/search";
+@import "components/incident-form";
+@import "components/form-label";
 
-@import './layouts/row';

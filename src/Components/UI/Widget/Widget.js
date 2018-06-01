@@ -21,7 +21,7 @@ const Widget = props => {
 
 };
 
-Widget.propType = {
+Widget.propTypes = {
     children: PropTypes.element.isRequired,
     text: PropTypes.string.isRequired,
     subText: PropTypes.string

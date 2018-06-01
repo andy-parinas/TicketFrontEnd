@@ -19,7 +19,7 @@ const TitledCard = props => {
 
 }
 
-TitledCard.propType = {
+TitledCard.propTypes = {
     title: PropTypes.string.isRequired,
     children: PropTypes.element.isRequired
 }

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-import TitledCard from '../../Components/TitledCard/TitledCard';
-import {FireIcon, SpinnerIcon, WrenchIcon, FileIcon} from '../../Components/Icons';
-import Widget from "../../Components/Widget/Widget";
+import TitledCard from '../../UI/TitledCard/TitledCard';
+import {FireIcon, SpinnerIcon, WrenchIcon, FileIcon} from '../../UI/Icons/index';
+import Widget from "../../UI/Widget/Widget";
 
 class DashboardWidget extends Component {
 

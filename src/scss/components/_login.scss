@@ -1,0 +1,44 @@
+.login {
+    width: 30%;
+    margin: 10rem auto;
+
+}
+
+.login-form{
+
+    padding: 1rem;
+
+}
+
+.form {
+
+    &__input{
+        display: block;
+        width: 100%;
+
+        font-family: "Lato", sans-serif;
+        font-size: 1.3rem;
+        padding: 5px 1rem;
+
+        border: 1px solid $color-input-border;
+        border-radius: 5px;
+    }
+
+    &__label{
+        font-size: 1.2rem;
+        font-family: "Lato", sans-serif;
+        display: block;
+        font-weight: 700;
+    }
+
+}
+
+.login-button{
+    width: 100%;
+}
+
+.form-group {
+
+    margin: 1.5rem 1rem;
+
+}

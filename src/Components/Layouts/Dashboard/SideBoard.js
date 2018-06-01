@@ -1,9 +1,9 @@
 import React from 'react';
 
-import {FireIcon, SpinnerIcon, WrenchIcon, FileIcon} from '../../Components/Icons/index';
-import ListGroup from "../../Components/ListComponent/ListGroup";
-import NavListItem from "../../Components/ListComponent/NavListItems";
-import TitledCard from '../../Components/TitledCard/TitledCard';
+import {FireIcon, SpinnerIcon, WrenchIcon, FileIcon} from '../../UI/Icons/index';
+import ListGroup from "../../UI/ListComponent/ListGroup";
+import NavListItem from "../../UI/ListComponent/NavListItems";
+import TitledCard from '../../UI/TitledCard/TitledCard';
 
 const SideBoard = props => {
 

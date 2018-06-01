@@ -1,0 +1,15 @@
+.search {
+
+  margin: 1rem $margin-item;
+  display: flex;
+  align-items: center;
+
+  &__input{
+    //display: block;
+    width: 100%;
+  }
+
+  &__button{
+    display: block;
+  }
+}

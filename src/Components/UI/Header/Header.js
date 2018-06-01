@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CogIcon from "../../Components/Icons/CogIcon";
+import CogIcon from "../Icons/CogIcon";
 
 class Header extends Component {
     render() {

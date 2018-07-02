@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 
+import requireAuth from '../../../hoc/requireAuth';
 import Navbar from '../../UI/Navbar/Navbar';
 import Header from '../../UI/Header/Header';
 import DashboardPage from '../../Pages/Dashboard/DashboardPage';
@@ -43,4 +44,4 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+export default requireAuth(Dashboard);

@@ -6,8 +6,11 @@ import Header from '../../UI/Header/Header';
 import DashboardPage from '../../Pages/Dashboard/DashboardPage';
 import SideBoard from "./SideBoard";
 import NavbarMenu from '../../UI/Navbar/NavbarMenu'
-import IncidentsPage from "../../Pages/Incidents/IncidentsPage";
+import IncidentListPage from "../../Pages/Incidents/IncidentListPage";
 import IncidentDetailPage from "../../Pages/Incidents/IncidentDetailPage";
+import IncidentManagementPage from "../../Pages/Incidents/IncidentManagementPage";
+import RequestManagementPage from "../../Pages/Requests/RequestManagementPage";
+import ChangeManagementPage from "../../Pages/Changes/ChangeManagementPage";
 
 
 class Dashboard extends Component {
@@ -26,8 +29,11 @@ class Dashboard extends Component {
                     <div className="content-page">
                         <Switch>
                             <Route path="/dashboard" component={DashboardPage} />
-                            <Route path="/incidents/show" component={IncidentDetailPage} />
-                            <Route path="/incidents" component={IncidentsPage} />
+                            <Route path="/incidents/all" component={IncidentListPage} />
+                            <Route path="/incidents/:id" component={IncidentDetailPage} />
+                            <Route path="/incidents" component={IncidentManagementPage} />
+                            <Route path="/requestmanagement" component={RequestManagementPage} />
+                            <Route path="/changemanagement" component={ChangeManagementPage} />
                             <Redirect to="/dashboard" from= "/" />
                         </Switch>
                     </div>

@@ -3,7 +3,7 @@ import TitledCard from "../../UI/TitledCard/TitledCard";
 import SearchIcon from "../../UI/Icons/SearchIcon";
 import IncidentTable from "./IncidentTable";
 
-class IncidentsPage extends Component {
+class IncidentListPage extends Component {
 
 
     render(){
@@ -24,4 +24,4 @@ class IncidentsPage extends Component {
 
 }
 
-export default IncidentsPage;
+export default IncidentListPage;

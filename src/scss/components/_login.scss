@@ -22,6 +22,10 @@
 
         border: 1px solid $color-input-border;
         border-radius: 5px;
+
+        &::placeholder{
+            color: $color-light-3;
+        }
     }
 
     &__label{

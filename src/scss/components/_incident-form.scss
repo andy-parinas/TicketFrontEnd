@@ -48,6 +48,10 @@
 
   &__control{
     grid-column: 4 / 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 
 }

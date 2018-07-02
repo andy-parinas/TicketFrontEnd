@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import {NavLink} from 'react-router-dom';
 
 
 const NavbarMenu = props => {
@@ -8,16 +9,16 @@ const NavbarMenu = props => {
         <Fragment>
             <ul className="navbar__menu" style={{flex: 1}}>
                 <li className="navbar__menu__item">
-                    <a className="menu__link" href=""> Dashboard </a>
+                    <NavLink to="/dashboard" className="menu__link" href=""> Dashboard </NavLink>
                 </li>
                 <li className="navbar__menu__item">
-                    <a className="menu__link" href=""> Incident Management </a>
+                    <NavLink to="/incidents" className="menu__link" href=""> Incident Management </NavLink>
                 </li>
                 <li className="navbar__menu__item">
-                    <a className="menu__link" href="">Service Request </a>
+                    <NavLink to="/requestmanagement" className="menu__link" href="">Service Request </NavLink>
                 </li>
                 <li className="navbar__menu__item">
-                    <a className="menu__link" href=""> Change Management </a>
+                    <NavLink to="/changemanagement" className="menu__link" href=""> Change Management </NavLink>
                 </li>
             </ul>
             <ul className="navbar__menu">

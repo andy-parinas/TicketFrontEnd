@@ -5,9 +5,9 @@ import {NavLink, Link} from 'react-router-dom';
 
 const NavListItem = props => {
     return  (
-        <NavLink className="list-group__nav-item" to="/">
+        <Link className="list-group__nav-item" to={props.to}>
             {props.children}
-        </NavLink>
+        </Link>
     );
 };
 

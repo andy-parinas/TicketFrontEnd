@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
+import * as actions from '../../../actions';
 
 import requireAuth from '../../../hoc/requireAuth';
 import Navbar from '../../UI/Navbar/Navbar';
@@ -17,7 +19,7 @@ import ChangeManagementPage from "../../Pages/Changes/ChangeManagementPage";
 class Dashboard extends Component {
     render() {
 
-        const menu = <NavbarMenu/>;
+        const menu = <NavbarMenu logout={this.props.logout}/>;
 
         return (
             <Fragment>
@@ -33,7 +35,7 @@ class Dashboard extends Component {
                             <Route path="/incidents/all" component={IncidentListPage} />
                             <Route path="/incidents/:id" component={IncidentDetailPage} />
                             <Route path="/incidents" component={IncidentManagementPage} />
-                            <Route path="/requestmanagement" component={RequestManagementPage} />
+                            <Route path="/servicerequests" component={RequestManagementPage} />
                             <Route path="/changemanagement" component={ChangeManagementPage} />
                             <Redirect to="/dashboard" from= "/" />
                         </Switch>
@@ -44,4 +46,6 @@ class Dashboard extends Component {
     }
 }
 
-export default requireAuth(Dashboard);
+
+
+export default connect(null, actions)(requireAuth(Dashboard));

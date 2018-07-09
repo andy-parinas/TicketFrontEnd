@@ -6,9 +6,9 @@ export const SORT = {
 
 export const INCIDENT = {
     ticketNumber: 'ticketNumber',
-    client: 'client',
+    client: 'clientName',
     description: 'description',
-    createdAt: 'created_at',
+    createdAt: 'createdAt',
     status: 'status',
     user: 'user'
 };

@@ -5,7 +5,11 @@ import DashboardWidget from "./DashboardWidget";
 import DashboardTable from "./DashboardTable";
 
 class DashboardPage extends Component {
+
+
+
     render() {
+       
         return (
             <div className="page" >
                 <DashboardWidget/>
@@ -16,5 +20,6 @@ class DashboardPage extends Component {
         );
     }
 }
+
 
 export default DashboardPage;

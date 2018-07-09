@@ -32,12 +32,40 @@ export const login = (loginData, callback) => async dispatch => {
             payload: response.data
         })
 
-        localStorage.setItem('token', response.data)
+        const token = response.data.token;
+        const user = response.data.user;
+
+        localStorage.setItem('token', token);
+        localStorage.setItem('user', user.name);
+        localStorage.setItem('userId', user.id);
+
         callback();
+
     }catch(e){
         dispatch({
             type: AUTH_ERROR,
             payload: 'Login Failed'
         })
     }
+}
+
+export const logout = () => dispatch => {
+
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    localStorage.removeItem('userId');
+
+    const payload = {
+        token: '',
+        user : {
+            name: '',
+            id: ''
+        }
+    }
+
+    dispatch({
+        type: AUTH_USER,
+        payload: payload
+    })
+
 }

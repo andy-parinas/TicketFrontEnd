@@ -1,6 +1,8 @@
 import {AUTH_USER, AUTH_ERROR} from '../actions/types';
 const initialState = {
     authenticated: '',
+    user: '',
+    userId: '',
     errorMessage: ''
 }
 
@@ -10,7 +12,9 @@ export default function(state = initialState, action){
         case AUTH_USER:
             return {
                 ...state,
-                authenticated: action.payload,
+                authenticated: action.payload.token,
+                user: action.payload.user.name,
+                userId: action.payload.user.id,
                 errorMessage: ''
             }
         

@@ -11,7 +11,9 @@ import reducers from './reducers';
 
 const store = createStore(reducers,
     { auth: { 
-        authenticated: localStorage.getItem('token')
+        authenticated: localStorage.getItem('token'),
+        user: localStorage.getItem('user'),
+        userId: localStorage.getItem('userId')
     }}, applyMiddleware(reduxThunk))
 
 

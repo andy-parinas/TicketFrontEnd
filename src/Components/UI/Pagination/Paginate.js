@@ -10,13 +10,16 @@ const Paginate = props => {
     const nextPage = props.nextPage;
     const prevPage = props.prevPage;
 
+    const disablePrev = prevPage == 0;
+    const disableNext = currentPage == totalPage;
+
     return(
         <div className="paginate">
             <div className="paginate__control">
-                <button className="paginate__button">
+                <button className="paginate__button" disabled={disablePrev} >
                     Prev
                 </button>
-                <button className="paginate__button" >
+                <button className="paginate__button" disabled={disableNext} >
                     Next
                 </button>
             </div>

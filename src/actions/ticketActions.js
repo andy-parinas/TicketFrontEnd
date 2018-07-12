@@ -1,7 +1,43 @@
 import axios from 'axios'
 
 import {api, headers} from '../appSettings';
-import {LIST_TICKETS, COUNT_ALL_TICKETS, COUNT_USER_TICKETS} from './types';
+import {LIST_TICKETS, COUNT_ALL_TICKETS, COUNT_USER_TICKETS, GET_TICKET, GET_TICKET_PROPERTIES} from './types';
+
+const emptyTicket = {
+    id: 0,
+        number: '',
+        description: '',
+        details: '',
+        createdAt: '',
+        updatedAt: '',
+        createdBy: {
+            id: 0,
+            firstName: '',
+            lastName: ''
+        },
+        assignedTo: {
+            id: 0,
+            firstName: '',
+            lastName: ''
+        },
+        status: '',
+        priority: '',
+        ticketType: '',
+        queue: '',
+        client: {
+            id: 0,
+            name: '',
+            address: '',
+            phone: '',
+            clientType: ''
+        },
+        configItem: {
+            id: 1,
+            name: '',
+            description: '',
+            configItemType: ''
+        }
+}
 
 export const createTicket = (ticketData) => async dispatch => {
     try {
@@ -34,6 +70,60 @@ export const listTickets = (listParams) => async dispatch => {
             type: LIST_TICKETS,
             payload: payload
         });
+
+    }catch(e){
+
+
+    }
+
+}
+
+
+export const selectTicket = (ticketId) => async dispatch => {
+
+    const apiHeader = {
+        ...headers,
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+    
+    try {
+
+        const url = `${api}/api/tickets/${ticketId}`;
+
+        const response = await axios.get(url, {headers: apiHeader});
+
+        dispatch({
+            type: GET_TICKET,
+            payload: response.data
+        })
+
+    } catch (e) {
+        if(e.response.status == 404){
+            dispatch({
+                type: GET_TICKET,
+                payload: emptyTicket
+            })
+        }
+    }
+
+}
+
+export const getTicketProperties = () => async dispatch => {
+
+    try{
+        const apiHeader = {
+            ...headers,
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+
+        const url = `${api}/api/tickets/properties`;
+
+        const response = await axios.get(url, {headers: apiHeader});
+
+        dispatch({
+            type: GET_TICKET_PROPERTIES,
+            payload: response.data
+        })
 
     }catch(e){
 

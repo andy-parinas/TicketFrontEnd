@@ -27,12 +27,14 @@ class DashboardTable extends Component{
             }
         }
 
+        
     }
 
     componentDidMount(){
         this.props.listTickets();
     }
 
+    
     
 
 
@@ -42,7 +44,7 @@ class DashboardTable extends Component{
 
         return(
             <Fragment>
-                <ActionTable columns={tableColumns} data={this.props.tickets} sort={this.state.sort} />
+                <ActionTable onRowClick={this.props.onRowClick} columns={tableColumns} data={this.props.tickets} sort={this.state.sort} />
                 <Paginate   currentPage={currentPage} 
                             totalPage={totalPage} 
                             prevPage={currentPage - 1} nextPage={currentPage + 1} />

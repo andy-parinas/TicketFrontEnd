@@ -86,6 +86,14 @@
 
     }
   }
+
+  &__row {
+
+    &:hover{
+      cursor: pointer;
+      background-color: $color-table-hover;
+    }
+  }
 }
 
 

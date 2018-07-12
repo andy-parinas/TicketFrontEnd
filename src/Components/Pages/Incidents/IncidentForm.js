@@ -1,9 +1,85 @@
-import React, {Component} from 'react'
+import React, {Component, PureComponent} from 'react'
 
 
-class IncidentForm extends Component{
+class IncidentForm extends PureComponent{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            ticket: {
+                id: 0,
+                number: '',
+                description: '',
+                details: '',
+                createdAt: '',
+                updatedAt: '',
+                createdBy: {
+                    id: 0,
+                    firstName: '',
+                    lastName: ''
+                },
+                assignedToId: 0,
+                assignedTo: {
+                    id: 0,
+                    firstName: '',
+                    lastName: ''
+                },
+                ticketStatusId: 0,
+                status: '',
+                ticketPriorityId: 0,
+                priority: '',
+                ticketType: '',
+                queue: '',
+                client: {
+                    id: 0,
+                    name: '',
+                    address: '',
+                    phone: '',
+                    clientType: ''
+                },
+                configItem: {
+                    id: 1,
+                    name: '',
+                    description: '',
+                    configItemType: ''
+                }
+            }
+        }
+    }
+
+    componentDidMount(){
+        console.log('ComponentDidMount');
+    }
+
+    static getDerivedStateFromProps(nextProps, prevState){
+        if(nextProps.ticket.id != prevState.ticket.id){
+            return {
+                ticket: nextProps.ticket
+            }
+        }
+
+        return prevState;
+    }
+
+
+
 
     render(){
+        
+        const {statuses, priorities, queues} = this.props.properties;
+        const users = this.props.users
+
+        const statusOptions = statuses.map(status => {
+            return <option value={status.id}> {status.name} </option>
+        });
+
+        const priorityOptions = priorities.map(priority => {
+            return <option value={priority.id}> {priority.name} </option>
+        })
+
+        const userOptions = users.map(user => {
+            return <option value={user.id}> {user.fullName} </option>
+        })
 
         return(
             <div className="form iform">
@@ -11,41 +87,50 @@ class IncidentForm extends Component{
                     Ticket Number
                 </div>
                 <div className="iform__input inform__input--num">
-                    <input className="text-input" type="text" placeholder="Enter Ticket Number" />
+                    <input  className="text-input" type="text" placeholder="Enter Ticket Number" 
+                            value={this.state.ticket.number} />
                 </div>
 
                 <div className="form-label iform__label iform__label--status">
                     Status
                 </div>
                 <div className="iform__input inform__input--status">
-                    <input className="text-input" type="text" placeholder="Enter Ticket Status" />
+                    <select className="text-input" value={this.state.ticket.ticketStatusId} >
+                        { statusOptions }
+                    </select>
                 </div>
 
                 <div className="form-label iform__label iform__label--priority">
                     Priority
                 </div>
                 <div className="iform__input inform__input--priority">
-                    <input className="text-input" type="text" placeholder="Enter Ticket Priority" />
+                    <select className="text-input" value={this.state.ticket.ticketPriorityId}>
+                        { priorityOptions }
+                    </select>
                 </div>
 
                 <div className="form-label iform__label iform__label--assign">
                     Assigned To
                 </div>
                 <div className="iform__input inform__input--assign">
-                    <input className="text-input" type="text" placeholder="Enter Ticket Owner" />
+                    <select className="text-input" value={this.state.ticket.assignedToId}>
+                        { userOptions }
+                    </select>
                 </div>
 
                 <div className="form-label iform__label iform__label--description">
                     Description
                 </div>
                 <div className="iform__input iform__input--description">
-                    <input className="text-input" type="text" placeholder="Enter Ticket Description" />
+                    <input  className="text-input" type="text" placeholder="Enter Ticket Description"
+                            value={this.state.ticket.description} />
                 </div>
                 <div className="form-label iform__label iform__label--detail">
                     Details
                 </div>
                 <div className="iform__input iform__input--detail">
-                    <textarea className="text-input" placeholder="Enter Ticket Details" ></textarea>
+                    <textarea  rows="10" className="text-input" placeholder="Enter Ticket Details" 
+                                value={this.state.ticket.details} ></textarea>
                 </div>
 
                 <div className="iform__section">

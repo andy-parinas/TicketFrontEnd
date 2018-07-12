@@ -1,3 +1,4 @@
+import {headers} from '../../appSettings';
 
 export const SORT = {
     ascending: 'ascending',
@@ -12,3 +13,11 @@ export const INCIDENT = {
     status: 'status',
     user: 'user'
 };
+
+export const getAutheader = () =>{
+
+    return  {
+        ...headers,
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+}

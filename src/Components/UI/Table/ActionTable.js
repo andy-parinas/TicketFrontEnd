@@ -21,11 +21,11 @@ const TableRow = props => {
     const row = props.row;
 
     const cells = props.columns.map(col => {
-    return <TableCell data={row[col.name]} />
+        return <TableCell key={Math.random()} data={row[col.name]} />
     });
 
     return(
-        <tr className="action-table__row">
+        <tr className="action-table__row" onClick={props.onClick} >
             {cells}
         </tr>
     )
@@ -41,7 +41,7 @@ class ActionTable extends Component{
         const sort = this.props.sort;
 
         const rows = this.props.data.map(row => {
-            return <TableRow row={row} columns={this.props.columns} />
+            return <TableRow key={row.id} row={row} columns={this.props.columns} onClick={() => this.props.onRowClick(row.id)} />
         });
 
         const headers = this.props.columns.map( column => {
@@ -57,7 +57,7 @@ class ActionTable extends Component{
 
             }
 
-           return <th className={`action-table__head__header`} >
+           return <th key={Math.random()} className={`action-table__head__header`} >
                         <div className="table-header-section">
                             <span> {column.header} </span>
                             {sortComponent? sortComponent : ''}

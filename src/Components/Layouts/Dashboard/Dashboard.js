@@ -17,6 +17,12 @@ import ChangeManagementPage from "../../Pages/Changes/ChangeManagementPage";
 
 
 class Dashboard extends Component {
+
+    componentDidMount(){
+        this.props.getTicketProperties();
+        this.props.listUsers();
+    }
+
     render() {
 
         const menu = <NavbarMenu logout={this.props.logout}/>;

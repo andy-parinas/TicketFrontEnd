@@ -1,12 +1,27 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 import TitledCard from '../../UI/TitledCard/TitledCard';
 import DashboardWidget from "./DashboardWidget";
 import DashboardTable from "./DashboardTable";
+import * as actions from '../../../actions/ticketActions';
 
 class DashboardPage extends Component {
 
 
+    constructor(props){
+        super(props);
+        this.state = {
+
+        }
+
+        this.handleTableClickEvent = this.handleTableClickEvent.bind(this);
+    }
+
+
+    handleTableClickEvent(id){
+        this.props.history.push(`/incidents/${id}`)
+    }
 
     render() {
        
@@ -14,7 +29,7 @@ class DashboardPage extends Component {
             <div className="page" >
                 <DashboardWidget/>
                 <TitledCard color="secondary" title="Latest Open Tickets" >
-                    <DashboardTable/>
+                    <DashboardTable onRowClick={this.handleTableClickEvent} />
                 </TitledCard>
             </div>
         );
@@ -22,4 +37,4 @@ class DashboardPage extends Component {
 }
 
 
-export default DashboardPage;
+export default connect(null, actions)(DashboardPage);
